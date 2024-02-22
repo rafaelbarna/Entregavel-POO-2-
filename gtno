@@ -1,0 +1,35 @@
+using System;
+
+class HotelBooking
+{
+    static void Main()
+    {
+        // Assume the customer has spent 10 days at the hotel
+        int numberOfDaysSpent = 10;
+
+        // Assuming the original cost without discount is $100 per day
+        double originalCostPerDay = 100.0;
+
+        // Calculate total cost without discount
+        double totalCostWithoutDiscount = numberOfDaysSpent * originalCostPerDay;
+
+        // Apply discount if the customer spent 10 or more days
+        double totalCostWithDiscount = totalCostWithoutDiscount;
+
+        if (numberOfDaysSpent >= 10)
+        {
+            // Apply 10% discount
+            double discountPercentage = 0.10;
+            double discountAmount = totalCostWithoutDiscount * discountPercentage;
+            totalCostWithDiscount = totalCostWithoutDiscount - discountAmount;
+
+            Console.WriteLine("Congratulations! You get a 10% discount for staying 10 or more days.");
+        }
+
+        // Display the total cost with or without discount
+        Console.WriteLine($"Total cost without discount: ${totalCostWithoutDiscount}");
+        Console.WriteLine($"Total cost with discount: ${totalCostWithDiscount}");
+
+        // Rest of your code...
+    }
+}
